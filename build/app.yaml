@@ -1,0 +1,74 @@
+runtime: nodejs16
+entrypoint: node index.js
+default_expiration: 0h
+handlers:
+  - url: /.DS_Store
+    static_files: storage/.DS_Store
+    upload: storage/.DS_Store
+    secure: always
+  - url: /comments.json.zip
+    static_files: storage/comments.json.zip
+    upload: storage/comments.json.zip
+    secure: always
+  - url: /dtype.py
+    static_files: storage/dtype.py
+    upload: storage/dtype.py
+    secure: always
+  - url: /favicon.png
+    static_files: storage/favicon.png
+    upload: storage/favicon.png
+    secure: always
+  - url: /fonts/InstrumentSans-Regular.ttf
+    static_files: storage/fonts/InstrumentSans-Regular.ttf
+    upload: storage/fonts/InstrumentSans-Regular.ttf
+    secure: always
+  - url: /fonts/Knewave-Regular.ttf
+    static_files: storage/fonts/Knewave-Regular.ttf
+    upload: storage/fonts/Knewave-Regular.ttf
+    secure: always
+  - url: /index_mapping.json
+    static_files: storage/index_mapping.json
+    upload: storage/index_mapping.json
+    secure: always
+  - url: /indexed_vectors.json
+    static_files: storage/indexed_vectors.json
+    upload: storage/indexed_vectors.json
+    secure: always
+  - url: /read_vectors.py
+    static_files: storage/read_vectors.py
+    upload: storage/read_vectors.py
+    secure: always
+  - url: /round.sh
+    static_files: storage/round.sh
+    upload: storage/round.sh
+    secure: always
+  - url: /round_vectors.py
+    static_files: storage/round_vectors.py
+    upload: storage/round_vectors.py
+    secure: always
+  - url: /url_parse.py
+    static_files: storage/url_parse.py
+    upload: storage/url_parse.py
+    secure: always
+  - url: /urls.json
+    static_files: storage/urls.json
+    upload: storage/urls.json
+    secure: always
+  - url: /urls_cleaned.json
+    static_files: storage/urls_cleaned.json
+    upload: storage/urls_cleaned.json
+    secure: always
+  - url: /vector_matrix.npy.zip
+    static_files: storage/vector_matrix.npy.zip
+    upload: storage/vector_matrix.npy.zip
+    secure: always
+  - url: /_app/immutable/
+    static_dir: storage/_app/immutable
+    expiration: 30d 0h
+    secure: always
+  - url: /_app/
+    static_dir: storage/_app
+    secure: always
+  - url: /.*
+    secure: always
+    script: auto
